@@ -46,8 +46,8 @@ public final class JoverOperatorService {
             return null;
         }
 
-        PsiType leftType = left.getType();
-        PsiType rightType = right.getType();
+        PsiType leftType = getJoverExpressionType(left);
+        PsiType rightType = getJoverExpressionType(right);
 
         if (!(leftType instanceof PsiClassType)) {
             return null;
@@ -111,6 +111,19 @@ public final class JoverOperatorService {
         }
 
         return best;
+    }
+
+    public static PsiType getJoverExpressionType(@NotNull PsiExpression expression) {
+        if (expression instanceof PsiBinaryExpression) {
+            PsiBinaryExpression binary = (PsiBinaryExpression) expression;
+
+            PsiMethod operatorMethod = resolveOperatorMethod(binary);
+            if (operatorMethod != null) {
+                return operatorMethod.getReturnType();
+            }
+        }
+
+        return expression.getType();
     }
 
     public static boolean isJoverOperator(@NotNull PsiBinaryExpression expression) {

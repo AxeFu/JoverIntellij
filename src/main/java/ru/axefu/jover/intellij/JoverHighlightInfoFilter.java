@@ -23,15 +23,7 @@ public final class JoverHighlightInfoFilter implements HighlightInfoFilter {
         int start = info.getStartOffset();
         int end = info.getEndOffset();
 
-        if (start < 0 || end < start || end > file.getTextLength()) {
-            return true;
-        }
-
         PsiElement element = file.findElementAt(start);
-        if (element == null) {
-            return true;
-        }
-
         PsiBinaryExpression expression = PsiTreeUtil.getParentOfType(element, PsiBinaryExpression.class, false);
 
         if (expression == null) {
@@ -44,10 +36,6 @@ public final class JoverHighlightInfoFilter implements HighlightInfoFilter {
             return true;
         }
 
-        /*
-         * Suppress only the Java operator error when Jover can resolve
-         * the expression to a real instance method.
-         */
         return !JoverOperatorService.isJoverOperator(expression);
     }
 }
