@@ -13,7 +13,7 @@ public final class JoverHighlightInfoFilter implements HighlightInfoFilter {
 
     @Override
     public boolean accept(@NotNull HighlightInfo info, @Nullable PsiFile file) {
-        if (file == null || info.getSeverity() != HighlightSeverity.ERROR) {
+        if (file == null || !Jover.isAvailable(file.getProject()) || info.getSeverity() != HighlightSeverity.ERROR) {
             return true;
         }
 

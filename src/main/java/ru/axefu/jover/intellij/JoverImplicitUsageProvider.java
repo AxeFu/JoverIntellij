@@ -9,7 +9,7 @@ public final class JoverImplicitUsageProvider implements ImplicitUsageProvider {
 
     @Override
     public boolean isImplicitUsage(@NotNull PsiElement element) {
-        return isReferencedByAlternativeNames(element);
+        return Jover.isAvailable(element.getProject()) && isReferencedByAlternativeNames(element);
     }
 
     @Override
