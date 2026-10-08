@@ -14,7 +14,7 @@ public final class JoverOperatorService {
         JoverOperator operator = JoverOperator.fromToken(expression.getOperationTokenType());
         PsiExpression left = expression.getLOperand();
         PsiExpression right = expression.getROperand();
-        if (operator == null || right == null) return null;
+        if (operator == null || left == null || right == null) return null;
 
         PsiType leftType = getType(left);
         PsiType rightType = getType(right);
@@ -26,7 +26,7 @@ public final class JoverOperatorService {
         JoverOperator operator = JoverOperator.fromToken(expression.getOperationTokenType());
         PsiExpression left = expression.getLExpression();
         PsiExpression right = expression.getRExpression();
-        if (operator == null || right == null) return null;
+        if (operator == null || left == null || right == null) return null;
 
         PsiType leftType = getType(left);
         PsiType rightType = getType(right);
@@ -36,6 +36,7 @@ public final class JoverOperatorService {
 
     public static PsiMethod resolveOperatorMethod(PsiPolyadicExpression expression) {
         PsiExpression[] operands = expression.getOperands();
+        if (operands.length < 2) return null;
         PsiExpression left, right = operands[0];
         PsiMethod result = null;
         for (int i = 1; i < operands.length; i++) {
@@ -52,6 +53,7 @@ public final class JoverOperatorService {
             PsiType rightType = getType(right);
 
             result = resolve(leftType, operator, rightType, expression);
+            if (result == null) return null;
         }
         return result;
     }
@@ -79,7 +81,8 @@ public final class JoverOperatorService {
     }
 
     private static PsiMethod resolve(PsiType leftType, JoverOperator operator, PsiType rightType, PsiExpression expression) {
-        if (leftType instanceof PsiPrimitiveType
+        if (leftType == null
+                || leftType instanceof PsiPrimitiveType
                 || leftType.equalsToText("java.lang.String")
                 || rightType == null)
             return null;
