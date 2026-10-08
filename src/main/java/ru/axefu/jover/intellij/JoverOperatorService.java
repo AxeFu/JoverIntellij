@@ -7,7 +7,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class JoverOperatorService {
-    private JoverOperatorService() {}
+    private JoverOperatorService() {
+    }
 
     @Nullable
     public static PsiMethod resolveOperatorMethod(@NotNull PsiBinaryExpression expression) {
