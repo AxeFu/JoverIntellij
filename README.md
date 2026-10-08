@@ -1,6 +1,6 @@
 # Jover IntelliJ Plugin
 
-IntelliJ IDEA подавление ошибок, которые разрешает Jover (Java Overload).
+IntelliJ IDEA подавление ошибок, которые разрешает [Jover](https://github.com/AxeFu/Jover) (Java Overload).
 
 ## Список ситуаций подавления:
 В случаях когда у левого операнда существует метод с требуемым аргументом
