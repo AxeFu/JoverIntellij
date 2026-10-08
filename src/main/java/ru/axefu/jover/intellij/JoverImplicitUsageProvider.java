@@ -9,13 +9,6 @@ public final class JoverImplicitUsageProvider implements ImplicitUsageProvider {
 
     @Override
     public boolean isImplicitUsage(@NotNull PsiElement element) {
-        /*
-         * We deliberately do not return true here.
-         *
-         * Jover operator expressions are exposed as real PSI references
-         * by JoverReferenceContributor. That lets IDEA's normal
-         * MethodReferencesSearch / unused machinery see the usage.
-         */
         return isReferencedByAlternativeNames(element);
     }
 

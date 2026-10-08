@@ -13,13 +13,7 @@
     <depends>com.intellij.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <daemon.highlightInfoFilter
-                implementation="ru.axefu.jover.intellij.JoverHighlightInfoFilter"/>
-
-        <implicitUsageProvider
-                implementation="ru.axefu.jover.intellij.JoverImplicitUsageProvider"/>
-
-        <psi.referenceContributor
-                implementation="ru.axefu.jover.intellij.JoverReferenceContributor"/>
+        <daemon.highlightInfoFilter implementation="ru.axefu.jover.intellij.JoverHighlightInfoFilter"/>
+        <implicitUsageProvider implementation="ru.axefu.jover.intellij.JoverImplicitUsageProvider"/>
     </extensions>
 </idea-plugin>

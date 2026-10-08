@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04913981-4a25-49df-a4f2-226c24d72541" name="Changes" comment="first commit">
+    <list default="true" id="04913981-4a25-49df-a4f2-226c24d72541" name="Changes" comment="Expression fix">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverHighlightInfoFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverHighlightInfoFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverImplicitUsageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverImplicitUsageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverOperator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverOperatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverOperatorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/axefu/jover/intellij/JoverReferenceContributor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +47,12 @@
                 <item name="jover-intellij" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jover-intellij" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="intellij platform" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -79,9 +90,14 @@
     &quot;Gradle.Build JoverPlugin.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JoverPlugin [buildDependents].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JoverPlugin [buildNeeded].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JoverPlugin [buildPluginVariants].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JoverPlugin [buildPlugin].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JoverPlugin [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JoverPlugin [classes].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JoverPlugin [cleanSandbox].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.JoverPlugin [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JoverPlugin [publishPlugin].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JoverPlugin [runIde].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -103,7 +119,7 @@
   }
 }</component>
   <component name="RunManager" selected="Gradle.JoverPlugin [jar]">
-    <configuration name="JoverPlugin [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JoverPlugin [buildPluginVariants]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -114,7 +130,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="buildDependents" />
+            <option value="buildPluginVariants" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -128,7 +144,7 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="JoverPlugin [buildNeeded]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JoverPlugin [cleanSandbox]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,57 +155,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="buildNeeded" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="JoverPlugin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="JoverPlugin [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="classes" />
+            <option value="cleanSandbox" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -228,13 +194,63 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
+    <configuration name="JoverPlugin [publishPlugin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publishPlugin" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="JoverPlugin [runIde]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runIde" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.JoverPlugin [jar]" />
-        <item itemvalue="Gradle.JoverPlugin [build]" />
-        <item itemvalue="Gradle.JoverPlugin [classes]" />
-        <item itemvalue="Gradle.JoverPlugin [buildNeeded]" />
-        <item itemvalue="Gradle.JoverPlugin [buildDependents]" />
+        <item itemvalue="Gradle.JoverPlugin [runIde]" />
+        <item itemvalue="Gradle.JoverPlugin [publishPlugin]" />
+        <item itemvalue="Gradle.JoverPlugin [cleanSandbox]" />
+        <item itemvalue="Gradle.JoverPlugin [buildPluginVariants]" />
       </list>
     </recent_temporary>
   </component>
@@ -262,6 +278,39 @@
       <workItem from="1791279839016" duration="61000" />
       <workItem from="1791280364636" duration="834000" />
       <workItem from="1791281207129" duration="3000" />
+      <workItem from="1791312631234" duration="4000" />
+      <workItem from="1791312719448" duration="58000" />
+      <workItem from="1791312786401" duration="1000" />
+      <workItem from="1791312827634" duration="538000" />
+      <workItem from="1791313375012" duration="4000" />
+      <workItem from="1791313459757" duration="89000" />
+      <workItem from="1791313601564" duration="387000" />
+      <workItem from="1791314025187" duration="601000" />
+      <workItem from="1791314635495" duration="2000" />
+      <workItem from="1791314653960" duration="322000" />
+      <workItem from="1791315059726" duration="493000" />
+      <workItem from="1791361223817" duration="1879000" />
+      <workItem from="1791363111130" duration="17000" />
+      <workItem from="1791363247322" duration="158000" />
+      <workItem from="1791363413207" duration="5000" />
+      <workItem from="1791363554541" duration="178000" />
+      <workItem from="1791363738346" duration="54000" />
+      <workItem from="1791363903631" duration="43000" />
+      <workItem from="1791364538722" duration="542000" />
+      <workItem from="1791365087498" duration="4000" />
+      <workItem from="1791365280664" duration="795000" />
+      <workItem from="1791367494324" duration="748000" />
+      <workItem from="1791368303494" duration="725000" />
+      <workItem from="1791369344550" duration="7697000" />
+      <workItem from="1791386663715" duration="1000" />
+      <workItem from="1791394673960" duration="1279000" />
+      <workItem from="1791396072534" duration="1823000" />
+      <workItem from="1791397945949" duration="27000" />
+      <workItem from="1791398221569" duration="5000" />
+      <workItem from="1791398270458" duration="284000" />
+      <workItem from="1791398707085" duration="391000" />
+      <workItem from="1791454452109" duration="494000" />
+      <workItem from="1791455488209" duration="2455000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />

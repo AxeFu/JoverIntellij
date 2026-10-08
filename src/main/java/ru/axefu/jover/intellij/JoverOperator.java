@@ -6,9 +6,16 @@ import org.jetbrains.annotations.Nullable;
 
 public enum JoverOperator {
     ADD(JavaTokenType.PLUS, "add"),
+    ADDEQ(JavaTokenType.PLUSEQ, "add"),
+
     SUBTRACT(JavaTokenType.MINUS, "subtract"),
+    SUBTRACTEQ(JavaTokenType.MINUSEQ, "subtract"),
+
     MULTIPLY(JavaTokenType.ASTERISK, "multiply"),
-    DIVIDE(JavaTokenType.DIV, "divide");
+    MULTIPLYEQ(JavaTokenType.ASTERISKEQ, "multiply"),
+
+    DIVIDE(JavaTokenType.DIV, "divide"),
+    DIVIDEEQ(JavaTokenType.DIVEQ, "divide");
 
     private final IElementType tokenType;
     private final String methodName;
